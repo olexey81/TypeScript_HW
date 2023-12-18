@@ -1,4 +1,4 @@
-class School {
+/* class School {
   public directions: any[] = []; // має бути : Direction[]
 
   public addDirection(direction: any): void {
@@ -123,3 +123,4 @@ class Student {
     return (averageGrade + attendancePercentage) / 2;
   }
 }
+ */
