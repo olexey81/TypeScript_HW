@@ -11,9 +11,9 @@ class School {
     get lecturers() {
       this._lecturers;
     }
-  }
+}
   
-  class Area {
+class Area {
     // implement getters for fields and 'add/remove level' methods
     _levels = [];
     _name;
@@ -21,9 +21,9 @@ class School {
     constructor(name) {
       this._name = name;
     }
-  }
+}
   
-  class Level {
+class Level {
     // implement getters for fields and 'add/remove group' methods
   
     _groups;
@@ -33,9 +33,9 @@ class School {
       this.name = name;
       this._description = description;
     }
-  }
+}
   
-  class Group {
+class Group {
     // implement getters for fields and 'add/remove student' and 'set status' methods
   
     _area;
@@ -51,9 +51,9 @@ class School {
       const sortedStudents = this._students.toSorted((a, b) => b.getPerformanceRating() - a.getPerformanceRating());
       return sortedStudents;
     }
-  }
+}
   
-  class Student {
+class Student {
     // implement 'set grade' and 'set visit' methods
   
     _firstName;
@@ -90,4 +90,4 @@ class School {
   
       return (averageGrade + attendancePercentage) / 2;
     }
-  }
+}
