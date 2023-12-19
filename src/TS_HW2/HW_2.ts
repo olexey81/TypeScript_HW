@@ -27,7 +27,7 @@ class School {
   }
 
   public removeArea(area: Area): void {
-    this._areas = this._areas.filter(a => a !== area);
+    this._areas = this._areas.filter(a => a.name !== area.name);
   }
 
   public addLecturer(lecturer: Lecturer): void {
@@ -35,7 +35,7 @@ class School {
   }
 
   public removeLecturer(lecturer: Lecturer): void {
-    this._lecturers = this._lecturers.filter(l => l !== lecturer);
+    this._lecturers = this._lecturers.filter(l => !(l.name === lecturer.name && l.surname === lecturer.surname));
   }
 }
 
@@ -68,7 +68,7 @@ class Area {
   }
 
   public removeLevel(level: Level): void {
-    this._levels = this._levels.filter(l => l !== level);
+    this._levels = this._levels.filter(l => l.name !== level.name);
   }
 }
 
@@ -108,7 +108,7 @@ class Level {
   }
 
   public removeGroup(group: Group): void {
-    this._groups = this._groups.filter(g => g !== group);
+    this._groups = this._groups.filter(g => !(g.directionName === group.directionName && g.levelName === group.levelName));
   }
 }
 
@@ -159,7 +159,7 @@ class Group {
   }
 
   public removeStudent(student: Student): void {
-    this._students = this._students.filter(s => s !== student);
+    this._students = this._students.filter(s => s.fullName !== student.fullName);
   }
 
   public showPerformance(): Student[] {
