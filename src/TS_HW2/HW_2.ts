@@ -6,7 +6,7 @@ type Lecturer = {
   experience: number;
   courses: string[];
   contacts: string[];
-}
+};
 
 class School {
   // implement 'add area', 'remove area', 'add lecturer', and 'remove lecturer' methods
@@ -40,10 +40,10 @@ class School {
 }
 
 enum AreaNames {
-  Science = "Science",
-  Mathematics = "Mathematics",
+  Science = 'Science',
+  Mathematics = 'Mathematics',
   Biology = 'Biology',
-  Philosophy = 'Philosophy'
+  Philosophy = 'Philosophy',
 }
 
 class Area {
@@ -76,7 +76,7 @@ enum LevelNames {
   Beginner = 'Beginner',
   Intermediate = 'Intermediate',
   Uppermediate = 'Uppermediate',
-  Top = 'Top'
+  Top = 'Top',
 }
 
 class Level {
@@ -108,7 +108,9 @@ class Level {
   }
 
   public removeGroup(group: Group): void {
-    this._groups = this._groups.filter(g => !(g.directionName === group.directionName && g.levelName === group.levelName));
+    this._groups = this._groups.filter(
+      g => !(g.directionName === group.directionName && g.levelName === group.levelName)
+    );
   }
 }
 
@@ -116,7 +118,7 @@ enum Status {
   active = 1,
   inactive,
   online,
-  offline
+  offline,
 }
 
 class Group {
@@ -170,8 +172,7 @@ class Group {
   public setStatus(status: number): void {
     if (Object.values(Status).includes(status)) {
       this._status = status;
-    }
-    else {
+    } else {
       console.error(`Invalid status code: ${status}`);
     }
   }
@@ -183,14 +184,8 @@ class Student {
   private _firstName: string;
   private _lastName: string;
   private _birthYear: number;
-  private _grades: { workName: string; mark: number }[] = [];   // workName: mark
-  private _visits: { lesson: string; present: boolean }[] = []; // lesson: present 
-
-  constructor(firstName: string, lastName: string, birthYear: number) {
-    this._firstName = firstName;
-    this._lastName = lastName;
-    this._birthYear = birthYear;
-  }
+  private _grades: { workName: string; mark: number }[] = []; // workName: mark
+  private _visits: { lesson: string; present: boolean }[] = []; // lesson: present
 
   get fullName(): string {
     return `${this._lastName} ${this._firstName}`;
@@ -204,12 +199,19 @@ class Student {
     return new Date().getFullYear() - this._birthYear;
   }
 
+  constructor(firstName: string, lastName: string, birthYear: number) {
+    this._firstName = firstName;
+    this._lastName = lastName;
+    this._birthYear = birthYear;
+  }
+
   public getPerformanceRating(): number {
     const gradeValues: number[] = this._grades.map(g => g.mark);
 
     if (!gradeValues.length) return 0;
 
-    const averageGrade: number = gradeValues.reduce((sum: number, grade: number) => sum + grade, 0) / gradeValues.length;
+    const averageGrade: number =
+      gradeValues.reduce((sum: number, grade: number) => sum + grade, 0) / gradeValues.length;
     const attendancePercentage: number = (this._visits.filter(v => v.present).length / this._visits.length) * 100;
 
     return (averageGrade + attendancePercentage) / 2;
