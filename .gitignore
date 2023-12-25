@@ -49,3 +49,5 @@ Thumbs.db
 .vscode/settings.json
 .vscode/settings.json
 results/*
+package-lock.json
+package.json

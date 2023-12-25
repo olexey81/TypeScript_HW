@@ -1,7 +1,7 @@
 {
   "name": "tshomeworkstructure",
   "version": "1.0.0",
-  "description": "",
+  "description": "1. Install Node.js from nodejs.org 2. use this folder for your project 3. `git init` (inside the current project folder) 4. `git init` 5. Write your code in src/index.ts",
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./"
@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/uuid": "^9.0.7",
     "@typescript-eslint/eslint-plugin": "^6.5.0",
     "eslint": "^8.48.0",
     "eslint-plugin-prettier": "^5.0.0",
@@ -29,5 +30,8 @@
       "eslint ./ --max-warnings=0",
       "git add"
     ]
+  },
+  "dependencies": {
+    "uuid": "^9.0.1"
   }
 }
