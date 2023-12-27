@@ -2,7 +2,11 @@
     У вас є сутність - Компанія, яка має назву, список департаментів, список попередньо найнятого персоналу,
     а також список усього персоналу компанії - співробітники всіх департаментів і попередньо найняті.
 */
-class Company {
+import { Department } from './Department';
+import { Employee } from './Employee';
+import { PreEmployee } from './PreEmployee';
+
+export class Company {
   private _departments: Department[] = [];
   private _preHiredStaff: PreEmployee[] = [];
   private _allStaff: (PreEmployee | Employee)[] = [];

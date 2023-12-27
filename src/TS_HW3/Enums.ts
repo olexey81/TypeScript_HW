@@ -1,9 +1,9 @@
-enum Statuses {
+export enum Statuses {
   Active = 'active',
   InActive = 'inactive',
   UnPaidLeave = 'unpaidleave',
 }
-enum DepartmentsNames {
+export enum DepartmentsNames {
   Sales = 'sales',
   Engineering = 'engineering',
   Research = 'research',

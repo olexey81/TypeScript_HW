@@ -2,7 +2,11 @@
     Сутність Співробітника - ім'я, прізвище, платіжну інформацію, зарплату, статус (активний, неактивний, у неоплачуваній відпустці)
     і знання про департамент,до якого він прикріплений.
 */
-class Employee extends Person {
+import { Person } from './Person';
+import { Statuses } from './Enums';
+import { Department } from './Department';
+
+export class Employee extends Person {
   get PaymentInfo(): string {
     return this._paymentInfo;
   }

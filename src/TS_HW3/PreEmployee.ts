@@ -1,5 +1,7 @@
 // Сутність Попередньо найнятого співробітника має ім'я, прізвище, зарплата та номер банківського рахунку.
-class PreEmployee extends Person {
+import { Person } from './Person';
+
+export class PreEmployee extends Person {
   public get Account(): string {
     return this._account;
   }

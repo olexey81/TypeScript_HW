@@ -4,7 +4,12 @@
     Так само у неї існують методи для обчислення балансу виходячи з поточного бюджету,
     додавання нових співробітників, який враховує зміни балансу і перетворення з Попередньо найнятого на Співробітника або видалення Співробітника з минулого відділу.
 */
-class Department {
+import { Employee } from './Employee';
+import { PreEmployee } from './PreEmployee';
+import { Company } from './Company';
+import { Statuses, DepartmentsNames } from './Enums';
+
+export class Department {
   private _staff: Employee[] = [];
   private _budget: { debit: number; credit: number } = { debit: 0, credit: 0 };
 

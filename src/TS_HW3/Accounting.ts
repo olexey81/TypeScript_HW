@@ -3,7 +3,13 @@
     для взяття на баланс співробітника або департаменту, зняття з балансу і виплати зарплати для всього персоналу.
     Попередньо найняті співробітники отримують зарплату за допомогою зовнішніх оплат, Співробітники (тільки активні) - за допомогою внутрішніх.
 */
-class Accounting extends Department {
+import { Employee } from './Employee';
+import { Company } from './Company';
+import { Department } from './Department';
+import { PreEmployee } from './PreEmployee';
+import { Statuses, DepartmentsNames } from './Enums';
+
+export class Accounting extends Department {
   public Balance: number;
 
   constructor(company: Company, domain: string, debit: number, credit: number) {
@@ -48,11 +54,13 @@ class Accounting extends Department {
   }
 
   private ExternalPayment(preEmployee: PreEmployee): void {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const account: string = preEmployee.Account;
     // some logic with payment to account
   }
 
   private InternalPayment(employee: Employee): void {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const paymentInfo: string = employee.PaymentInfo;
     // some logic with payment to paymentInfo
   }
