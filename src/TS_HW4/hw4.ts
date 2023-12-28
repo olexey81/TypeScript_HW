@@ -30,6 +30,7 @@ class Calculator implements ICalculator {
   }
 
   division(firstNumber: number, secondNumber: number): number {
+    if (secondNumber === 0) throw new EvalError('Division by zero is prohibited!');
     return firstNumber / secondNumber;
   }
 }
@@ -44,6 +45,8 @@ function calculate(calc: ICalculator, action: Actions, firstNumber: number, seco
       return calc.multiplication(firstNumber, secondNumber);
     case Actions.Division:
       return calc.division(firstNumber, secondNumber);
+    default:
+      throw new Error('Incorrect type of operation');
   }
 }
 
