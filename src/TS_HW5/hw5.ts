@@ -100,7 +100,7 @@ class Triangle extends Figure {
 
 class Validator {
   static isPositive(numberA: number, numberB?: number, numberC?: number): boolean {
-    if (numberB && numberC) return numberA > 0 && numberB > 0 && numberB > 0;
+    if (numberB && numberC) return numberA > 0 && numberB > 0 && numberC > 0;
     if (numberB) return numberA > 0 && numberB > 0;
     return numberA > 0;
   }
