@@ -1,27 +1,27 @@
-/* 
-    У вас є сутність - Компанія, яка має назву, список департаментів, список попередньо найнятого персоналу,
-    а також список усього персоналу компанії - співробітники всіх департаментів і попередньо найняті.
-*/
-import { Department } from './Department';
-import { Employee } from './Employee';
-import { PreEmployee } from './PreEmployee';
+// /* 
+//     У вас є сутність - Компанія, яка має назву, список департаментів, список попередньо найнятого персоналу,
+//     а також список усього персоналу компанії - співробітники всіх департаментів і попередньо найняті.
+// */
+// import { Department } from './Department';
+// import { Employee } from './Employee';
+// import { PreEmployee } from './PreEmployee';
 
-export class Company {
-  private _departments: Department[] = [];
-  private _preHiredStaff: PreEmployee[] = [];
-  private _allStaff: (PreEmployee | Employee)[] = [];
+// export class Company {
+//   private _departments: Department[] = [];
+//   private _preHiredStaff: PreEmployee[] = [];
+//   private _allStaff: (PreEmployee | Employee)[] = [];
 
-  get Departments(): Department[] {
-    return this._departments;
-  }
+//   get Departments(): Department[] {
+//     return this._departments;
+//   }
 
-  get PreHiredStaff(): PreEmployee[] {
-    return this._preHiredStaff;
-  }
+//   get PreHiredStaff(): PreEmployee[] {
+//     return this._preHiredStaff;
+//   }
 
-  get AllStaff(): (PreEmployee | Employee)[] {
-    return this._allStaff;
-  }
+//   get AllStaff(): (PreEmployee | Employee)[] {
+//     return this._allStaff;
+//   }
 
-  constructor(public readonly Name: string) {}
-}
+//   constructor(public readonly Name: string) {}
+// }
