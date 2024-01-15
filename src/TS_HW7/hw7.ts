@@ -56,11 +56,13 @@ class Stack<T> {
 
 // Узагальнений словник
 // Створіть узагальнений клас Dictionary, який являє собою словник (асоціативний масив) з методами set, get і has. Обмежте ключі тільки валідними типами для об'єкта
+type KeyTypes = string | number | symbol;
+
 interface IDictionary<V> {
-  [key: string | number | symbol]: V;
+  [key: KeyTypes]: V;
 }
 
-class Dictionary<K extends string | number | symbol, V> {
+class Dictionary<K extends KeyTypes, V> {
   private _dictionary: IDictionary<V>[];
 
   public get count(): number {
