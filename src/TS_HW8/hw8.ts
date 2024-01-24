@@ -18,9 +18,5 @@ type UpperCaseKeysDeep<T> = {
 
 // І саме цікаве. Створіть тип ObjectToPropertyDescriptor, який перетворює звичайний обʼєкт на обʼєкт де кожне value є дескриптором.
 type ObjectToPropertyDescriptor<T> = {
-  [K in keyof T]: {
-    value: T[K];
-    count: number;
-    isActive: boolean;
-  };
+  [K in keyof T]: PropertyDescriptor;
 };
