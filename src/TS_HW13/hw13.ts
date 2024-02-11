@@ -21,25 +21,32 @@
 
 + Також окремо необхідно розширити список можливістю сортування нотаток за статусом або часом створення.
 */
-
+enum NoteStatuses {
+  active,
+  unactive,
+  done,
+  postponed,
+}
+enum NoteTypes {
+  default,
+  comfirmationRequired,
+}
 interface INote {
   name: string;
   content: string;
   createDate: Date;
   changeDate: Date;
-  status: boolean;
-  type: 'default' | 'comfirmationRequired';
+  status: NoteStatuses;
+  type: NoteTypes;
 }
 
 interface INotePad {
   list: INote[];
-
   addNewNote(newnote: INote): void;
   deleteNote(...args: unknown[]): void;
   editNote(...args: unknown[]): void;
   showNoteInfoByID(id: number): void;
   getAllNotes(): INote[];
-
   markNoteAsDone(note: INote): void;
   countTotalNotes(): number;
   countRemainingNotes(): number;
@@ -113,11 +120,11 @@ class NotePad implements INotePad, ISearchableNotePad, ISortableNotePad {
 
 class Note implements INote {
   public readonly createDate: Date;
-  public readonly type: 'default' | 'comfirmationRequired';
+  public readonly type: NoteTypes;
   private _name: string;
   private _content: string;
   private _changeDate: Date;
-  private _status: boolean;
+  private _status: NoteStatuses;
 
   get name(): string {
     return this._name;
@@ -146,21 +153,21 @@ class Note implements INote {
     this._changeDate = updateDate;
   }
 
-  get status(): boolean {
+  get status(): NoteStatuses {
     return this._status;
   }
 
-  set status(newStatus: boolean) {
+  set status(newStatus: NoteStatuses) {
     // some checks
     this._status = newStatus;
   }
 
-  constructor(name: string, content: string, type: 'default' | 'comfirmationRequired') {
+  constructor(name: string, content: string, type: NoteTypes) {
     this.createDate = new Date();
     this._name = name;
     this._content = content;
     this._changeDate = this.createDate;
-    this._status = true;
+    this._status = NoteStatuses.active;
     this.type = type;
   }
 }
